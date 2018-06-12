@@ -6,12 +6,18 @@
 #    By: cchameyr <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/06/11 16:44:32 by cchameyr          #+#    #+#              #
-#    Updated: 2018/06/11 16:56:46 by cchameyr         ###   ########.fr        #
+#    Updated: 2018/06/12 11:24:48 by cchameyr         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 section .data
 
 
-
 section .text
+gloabal _main
+
+
+_main:
+	push rbp
+	mov rbp, rsp
+
