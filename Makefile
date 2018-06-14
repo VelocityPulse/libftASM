@@ -6,7 +6,7 @@
 #    By: cchameyr <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/06/11 12:08:35 by cchameyr          #+#    #+#              #
-#    Updated: 2018/06/14 13:14:54 by cchameyr         ###   ########.fr        #
+#    Updated: 2018/06/14 13:27:56 by cchameyr         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -56,6 +56,5 @@ fclean: clean
 re: fclean all
 
 r: re
-	gcc $(FLAGS) -c maintest.c
-	gcc $(FLAGS) maintest.o $(NAME)
+	gcc $(FLAGS) maintest.c $(NAME)
 	./a.out
