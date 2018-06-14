@@ -6,7 +6,7 @@
 #    By: cchameyr <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/06/11 12:08:35 by cchameyr          #+#    #+#              #
-#    Updated: 2018/06/14 13:10:02 by cchameyr         ###   ########.fr        #
+#    Updated: 2018/06/14 13:13:53 by cchameyr         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -38,11 +38,11 @@ $(NAME): $(OBJS)
 
 $(OBJS):
 	$(ASM) $(N_FLAGS) $(SRCS)
-	@make objs_mv
+	make objs_mv
 
 objs_mv:
-	@mkdir objs
-	@mv $(FILES:.s=.o) ./objs/
+	mkdir objs
+	mv $(SRCS:.s=.o) ./objs/
 
 objs_rm:
 	$(RM) objs
