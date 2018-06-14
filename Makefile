@@ -6,7 +6,7 @@
 #    By: cchameyr <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/06/11 12:08:35 by cchameyr          #+#    #+#              #
-#    Updated: 2018/06/14 11:18:39 by cchameyr         ###   ########.fr        #
+#    Updated: 2018/06/14 11:24:21 by cchameyr         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ FILES = ft_isdigit.s
 
 SRCS = $(addprefix srcs/, $(FILES))
 
-OBJS = $(addprefix objs/, $(SRCS:.s=.o))
+OBJS = $(addprefix objs/, $(FILES:.s=.o))
 
 ASM = nasm
 
