@@ -6,7 +6,7 @@
 #    By: cchameyr <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/06/11 12:08:35 by cchameyr          #+#    #+#              #
-#    Updated: 2018/06/14 11:24:21 by cchameyr         ###   ########.fr        #
+#    Updated: 2018/06/14 11:35:35 by cchameyr         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -51,5 +51,10 @@ clean: objs_rm
 
 fclean: clean
 	$(RM) $(NAME)
+	$(RM) a.out
 
 re: fclean all
+
+r: re
+	gcc maintest.c $(NAME)
+	./a.out

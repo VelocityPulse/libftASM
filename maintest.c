@@ -6,7 +6,17 @@
 /*   By: cchameyr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/14 11:09:51 by cchameyr          #+#    #+#             */
-/*   Updated: 2018/06/14 11:09:55 by cchameyr         ###   ########.fr       */
+/*   Updated: 2018/06/14 11:34:30 by cchameyr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "incl/libftasm.h"
+#include <stdio.h>
+
+#define BACKLINE(s) printf("\n-------------------------------%s\n", s);
+
+int main()
+{
+	BACKLINE("lol");
+
+}
