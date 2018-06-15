@@ -6,7 +6,7 @@
 /*   By: cchameyr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/14 11:09:51 by cchameyr          #+#    #+#             */
-/*   Updated: 2018/06/15 12:32:14 by cchameyr         ###   ########.fr       */
+/*   Updated: 2018/06/15 13:54:42 by cchameyr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,6 +55,32 @@ int main()
 	printf("param: '2' |\tret: %d\n", ft_isdigit('5'));
 	printf("param: '9' |\tret: %d\n", ft_isdigit('9'));
 	printf("param: -10 |\tret: %d\n", ft_isdigit(-10));
+
+	BACKLINE("ft_isascii");
+	printf("param: -1 |\tret: %d\n", ft_isascii(-1));
+	printf("param: 0 |\tret: %d\n", ft_isascii(0));
+	printf("param: 64 |\tret: %d\n", ft_isascii(64));
+	printf("param: 127 |\tret: %d\n", ft_isascii(127));
+	printf("param: 128 |\tret: %d\n", ft_isascii(128));
+
+// sp to ~
+	BACKLINE("ft_isprint");
+	printf("param: 31 |\tret: %d\n", ft_isprint(31));
+	printf("param: 32 |\tret: %d\n", ft_isprint(32));
+	printf("param: 'C' |\tret: %d\n", ft_isprint('C'));
+	printf("param: ' ' |\tret: %d\n", ft_isprint(' '));
+	printf("praam: '~' |\tret: %d\n", ft_isprint('~'));
+	printf("praam: 127 |\tret: %d\n", ft_isprint(127));
+
+
+
+
+
+
+
+
+
+
 
 
 

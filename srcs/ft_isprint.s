@@ -1,12 +1,12 @@
 section .text
-global _ft_isascii
+global _ft_isprint
 
-_ft_isascii:
+_ft_isprint:
 	push rbp
 	mov rbp, rsp
-	cmp rdi, 0
+	cmp rdi, 32
 	jl false
-	cmp rdi, 127
+	cmp rdi, 126
 	ja false
 	mov rax, 1
 	leave
