@@ -1,4 +1,3 @@
-
 section .text
 extern ft_isalnum
 extern ft_isalpha
