@@ -6,7 +6,7 @@
 /*   By: cchameyr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/14 11:20:38 by cchameyr          #+#    #+#             */
-/*   Updated: 2018/06/15 11:37:59 by cchameyr         ###   ########.fr       */
+/*   Updated: 2018/06/15 12:20:18 by cchameyr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,5 +15,6 @@
 
 int		ft_isdigit(int c);
 int		ft_isalpha(int c);
+int		ft_isalnum(int c);
 
 #endif
