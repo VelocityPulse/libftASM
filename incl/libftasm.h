@@ -6,7 +6,7 @@
 /*   By: cchameyr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/14 11:20:38 by cchameyr          #+#    #+#             */
-/*   Updated: 2018/06/15 13:49:32 by cchameyr         ###   ########.fr       */
+/*   Updated: 2018/06/15 13:57:13 by cchameyr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,5 +18,8 @@ int		ft_isalpha(int c);
 int		ft_isalnum(int c);
 int		ft_isascii(int c);
 int		ft_isprint(int c);
+
+int		ft_toupper(int c);
+int		ft_tolower(int c);
 
 #endif

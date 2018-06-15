@@ -6,7 +6,7 @@
 /*   By: cchameyr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/14 11:09:51 by cchameyr          #+#    #+#             */
-/*   Updated: 2018/06/15 13:54:42 by cchameyr         ###   ########.fr       */
+/*   Updated: 2018/06/15 16:09:19 by cchameyr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,10 +69,26 @@ int main()
 	printf("param: 32 |\tret: %d\n", ft_isprint(32));
 	printf("param: 'C' |\tret: %d\n", ft_isprint('C'));
 	printf("param: ' ' |\tret: %d\n", ft_isprint(' '));
-	printf("praam: '~' |\tret: %d\n", ft_isprint('~'));
-	printf("praam: 127 |\tret: %d\n", ft_isprint(127));
+	printf("param: '~' |\tret: %d\n", ft_isprint('~'));
+	printf("param: 127 |\tret: %d\n", ft_isprint(127));
 
+	BACKLINE("ft_toupper");
+	printf("param: 'c' |\t ret: '%c' || %d\n", ft_toupper('c'), ft_toupper('c'));
+	printf("param: 'C' |\t ret: '%c' || %d\n", ft_toupper('C'), ft_toupper('C'));
+	printf("param: 'a' |\t ret: '%c' || %d\n", ft_toupper('a'), ft_toupper('a'));
+	printf("param: 'z' |\t ret: '%c' || %d\n", ft_toupper('z'), ft_toupper('z'));
+	printf("param: 200 |\t ret: '%c' || %d\n", ft_toupper(200), ft_toupper(200));
+	printf("param: -200 |\t ret: '%c' || %d\n", ft_toupper(-200), ft_toupper(-200));
+	printf("param: '[' |\t ret: '%c' || %d\n", ft_toupper('['), ft_toupper('['));
 
+	BACKLINE("ft_tolower");
+	printf("param: 'c' |\t ret: '%c' || %d\n", ft_tolower('c'), ft_tolower('c'));
+	printf("param: 'C' |\t ret: '%c' || %d\n", ft_tolower('C'), ft_tolower('C'));
+	printf("param: 'a' |\t ret: '%c' || %d\n", ft_toupper('a'), ft_tolower('a'));
+	printf("param: 'z' |\t ret: '%c' || %d\n", ft_tolower('z'), ft_tolower('z'));
+	printf("param: 200 |\t ret: '%c' || %d\n", ft_tolower(200), ft_tolower(200));
+	printf("param: -200 |\t ret: '%c' || %d\n", ft_tolower(-200), ft_tolower(-200));
+	printf("param: '[' |\t ret: '%c' || %d\n", ft_tolower('['), ft_tolower('['));
 
 
 
