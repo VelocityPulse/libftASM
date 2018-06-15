@@ -6,15 +6,19 @@
 #    By: cchameyr <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/06/11 12:08:35 by cchameyr          #+#    #+#              #
-#    Updated: 2018/06/14 13:27:56 by cchameyr         ###   ########.fr        #
+#    Updated: 2018/06/15 12:01:26 by cchameyr         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 .PHONY: all clean fclean re
 
-FILES = ft_isdigit.s
+FILES = ft_isdigit.s \
+		ft_isalpha.s
 
 SRCS = $(addprefix srcs/, $(FILES))
+vpath %.s srcs
+
+OPATH = objs/
 
 OBJS = $(addprefix objs/, $(FILES:.s=.o))
 
@@ -32,20 +36,19 @@ RM = rm -rf
 
 all: $(NAME)
 
-$(NAME): $(OBJS)
+$(NAME): $(OBJS) objs_mv
 	$(AR) $(NAME) $(OBJS)
 	ranlib $(NAME)
 
-$(OBJS):
-	$(ASM) $(N_FLAGS) $(SRCS)
-	make objs_mv
+$(OPATH)%.o: %.s
+	$(ASM) $(N_FLAGS) $<
 
 objs_mv:
 	mkdir objs
-	mv $(SRCS:.s=.o) ./objs/
+	mv $(SRCS:.s=.o) $(OPATH)
 
 objs_rm:
-	$(RM) objs
+	$(RM) $(OPATH)
 
 clean: objs_rm
 
