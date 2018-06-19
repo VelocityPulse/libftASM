@@ -6,7 +6,7 @@
 /*   By: cchameyr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/14 11:09:51 by cchameyr          #+#    #+#             */
-/*   Updated: 2018/06/19 11:56:16 by cchameyr         ###   ########.fr       */
+/*   Updated: 2018/06/19 16:43:16 by cchameyr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,35 @@
 #include <stdlib.h>
 #include <unistd.h>
 #include <stdio.h>
+#include <string.h>
 
 #define BACKLINE(s) printf("\n------------------------------- %s\n", s);
+
+static void		ft_putstr(char *s)
+{
+	write(1, s, strlen(s));
+}
+
+static void		ft_putnbr(int n)
+{
+	long nbr;
+
+	nbr = n;
+	if (nbr < 0)
+	{
+		write(1, "-", 1);
+		nbr = -nbr;
+	}
+	if (nbr >= 10)
+	{
+		ft_putnbr(nbr / 10);
+		ft_putnbr(nbr % 10);
+	}
+	else {
+		char fking_char = nbr + 48;
+		write(1, &fking_char, 1);
+	}
+}
 
 static int		unitest_putnstr(char *prefix, void const *p, size_t len)
 {
@@ -24,10 +51,12 @@ static int		unitest_putnstr(char *prefix, void const *p, size_t len)
 
 	i = -1;
 	s = (char *)p;
-	printf("param: %s |\tret: ", prefix);
+	ft_putstr("param: ");
+	ft_putstr(prefix);
+	ft_putstr(" |\tret: ");
 	while (++i < len) {
 		if (s[i] == 0) {
-			write(1, "0", 1);
+			ft_putstr("\033[31m0\033[39m");
 		} else {
 			write(1, &s[i], 1);
 		}
@@ -35,6 +64,24 @@ static int		unitest_putnstr(char *prefix, void const *p, size_t len)
 	printf("\n");
 	return (i);
 }
+
+static int		unitest_putnnbr(char *prefix, int const *p, size_t len)
+{
+	size_t		i;
+
+	i = -1;
+	ft_putstr("param: ");
+	ft_putstr(prefix);
+	ft_putstr(" |\tret: ");
+	while (++i < len) {
+//		ft_putstr("\033[31m0\033[39m");
+		ft_putnbr(p[i]);
+		ft_putstr(" ");
+	}
+	printf("\n");
+	return (i);
+}
+
 
 int main()
 {
@@ -104,24 +151,20 @@ int main()
 	printf("param: '[' |\t ret: '%c' || %d\n", ft_tolower('['), ft_tolower('['));
 
 	BACKLINE("ft_bzero");
-	char *t1 = NULL;
-	char *t2 = strdup("test");
-	char *t3 = strdup("");
-	int *t4 = malloc(sizeof(int) * 4);
-	t4[0] = 100;
-	t4[1] = 20;
-	t4[2] = 300000000;
-	t4[3] = -40000000;
-	ft_bzero(t1, 0);
-//	ft_bzero(t2, strlen(t2));
-//	ft_bzero(t3, 1);
-//	ft_bzero(t4, 4);
+	char *t1 = strdup("test");
+	char *t2 = strdup("");
+	int *t3 = malloc(sizeof(int) * 4);
+	t3[0] = 100;
+	t3[1] = 20;
+	t3[2] = 300000000;
+	t3[3] = -40000000;
+	ft_bzero(t1, strlen(t1));
+	ft_bzero(t2, 1);
+	ft_bzero(t3, 16);
 
-
-	unitest_putnstr("t1", t1, 2);
-//	unitest_putnstr("t2", t2, 5);
-//	unitest_putnstr("t3", t3, 1);
-//	unitest_putnstr("t4", t4, 5);
+	unitest_putnstr("t1", t1, 5);
+	unitest_putnstr("t2", t2, 1);
+	unitest_putnnbr("t3", t3, 4);
 
 
 

@@ -6,7 +6,7 @@
 #    By: cchameyr <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/06/11 12:08:35 by cchameyr          #+#    #+#              #
-#    Updated: 2018/06/19 11:49:05 by cchameyr         ###   ########.fr        #
+#    Updated: 2018/06/19 15:35:17 by cchameyr         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -32,7 +32,7 @@ ASM = nasm
 
 N_FLAGS = -f macho64
 
-DEBUG = -fsanitize=address
+DEBUG = -fsanitize=address -g
 
 AR = ar r
 
