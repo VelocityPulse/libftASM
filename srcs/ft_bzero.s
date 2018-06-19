@@ -5,14 +5,14 @@ _ft_bzero:
 	push rbp
 	mov rbp, rsp
 	mov rax, rsi
-	while:
+	while
 		cmp rax, 0
 		jl exit
-		mov byte[rdi+rsi], 0
+		mov rdi, 0
 		dec rax
 		jmp while
 
-	exit:
+	exit
 		leave
 		ret
 

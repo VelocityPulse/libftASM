@@ -6,7 +6,7 @@
 #    By: cchameyr <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/06/11 12:08:35 by cchameyr          #+#    #+#              #
-#    Updated: 2018/06/19 11:47:36 by cchameyr         ###   ########.fr        #
+#    Updated: 2018/06/19 11:49:05 by cchameyr         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -31,6 +31,8 @@ OBJS = $(addprefix objs/, $(FILES:.s=.o))
 ASM = nasm
 
 N_FLAGS = -f macho64
+
+DEBUG = -fsanitize=address
 
 AR = ar r
 
@@ -65,5 +67,5 @@ fclean: clean
 re: fclean all
 
 r: re
-	gcc maintest.c $(NAME)
+	gcc $(DEBUG) maintest.c $(NAME)
 	./a.out
