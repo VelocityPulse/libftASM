@@ -6,7 +6,7 @@
 #    By: cchameyr <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/06/11 12:08:35 by cchameyr          #+#    #+#              #
-#    Updated: 2018/06/15 14:11:01 by cchameyr         ###   ########.fr        #
+#    Updated: 2018/06/19 11:47:36 by cchameyr         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,8 @@ FILES = ft_isdigit.s \
 		ft_isascii.s \
 		ft_isprint.s \
 		ft_toupper.s \
-		ft_tolower.s
+		ft_tolower.s \
+		ft_bzero.s
 
 SRCS = $(addprefix srcs/, $(FILES))
 vpath %.s srcs
@@ -64,5 +65,5 @@ fclean: clean
 re: fclean all
 
 r: re
-	gcc $(FLAGS) maintest.c $(NAME)
+	gcc maintest.c $(NAME)
 	./a.out

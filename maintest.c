@@ -6,15 +6,35 @@
 /*   By: cchameyr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/14 11:09:51 by cchameyr          #+#    #+#             */
-/*   Updated: 2018/06/15 16:09:19 by cchameyr         ###   ########.fr       */
+/*   Updated: 2018/06/19 11:47:19 by cchameyr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "incl/libftasm.h"
+#include <stdlib.h>
+#include <unistd.h>
 #include <stdio.h>
 
 #define BACKLINE(s) printf("\n------------------------------- %s\n", s);
 
+static int		unitest_putnstr(char *prefix, void const *p, size_t len)
+{
+	size_t    i;
+	char *s;
+
+	i = -1;
+	s = (char *)p;
+	printf("param: %s |\tret: ", prefix);
+	while (++i < len) {
+		if (s[i] == 0) {
+			write(1, "0", 1);
+		} else {
+			write(1, &s[i], 1);
+		}
+	}
+	printf("\n");
+	return (i);
+}
 
 int main()
 {
@@ -42,14 +62,7 @@ int main()
 	printf("param: 'z' |\tret: %d\n", ft_isalpha('z'));
 	printf("param: 'Z' |\tret: %d\n", ft_isalpha('Z'));
 
-	BACKLINE("ft_isalnum");
-	printf("param: 1 |\tret: %d\n", ft_isalpha(1));
-	printf("param: 7 |\tret: %d\n", ft_isalpha(7));
-	printf("param: '[' |\tret: %d\n", ft_isalpha('['));
-	printf("param: 4242 |\tret: %d\n", ft_isalpha(4242));
-	printf("param: 'd' |\tret: %d\n", ft_isalpha('d'));
-	printf("param: 'a' |\tret: %d\n", ft_isalpha('a'));
-	printf("param: 'z' |\tret: %d\n", ft_isalpha('z'));
+	BACKLINE("ft_isdigit");
 	printf("param: 4242 |\tret: %d\n", ft_isdigit(4242));
 	printf("param: '0' |\tret: %d\n", ft_isdigit('0'));
 	printf("param: '2' |\tret: %d\n", ft_isdigit('5'));
@@ -63,7 +76,7 @@ int main()
 	printf("param: 127 |\tret: %d\n", ft_isascii(127));
 	printf("param: 128 |\tret: %d\n", ft_isascii(128));
 
-// sp to ~
+	// sp to ~
 	BACKLINE("ft_isprint");
 	printf("param: 31 |\tret: %d\n", ft_isprint(31));
 	printf("param: 32 |\tret: %d\n", ft_isprint(32));
@@ -90,15 +103,25 @@ int main()
 	printf("param: -200 |\t ret: '%c' || %d\n", ft_tolower(-200), ft_tolower(-200));
 	printf("param: '[' |\t ret: '%c' || %d\n", ft_tolower('['), ft_tolower('['));
 
+	BACKLINE("ft_bzero");
+	char *t1 = NULL;
+	char *t2 = strdup("test");
+	char *t3 = strdup("");
+	int *t4 = malloc(sizeof(int) * 4);
+	t4[0] = 100;
+	t4[1] = 20;
+	t4[2] = 300000000;
+	t4[3] = -40000000;
+	ft_bzero(t1, 0);
+//	ft_bzero(t2, strlen(t2));
+//	ft_bzero(t3, 1);
+//	ft_bzero(t4, 4);
 
 
-
-
-
-
-
-
-
+	unitest_putnstr("t1", t1, 2);
+//	unitest_putnstr("t2", t2, 5);
+//	unitest_putnstr("t3", t3, 1);
+//	unitest_putnstr("t4", t4, 5);
 
 
 
