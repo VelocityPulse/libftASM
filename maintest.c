@@ -6,7 +6,7 @@
 /*   By: cchameyr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/14 11:09:51 by cchameyr          #+#    #+#             */
-/*   Updated: 2018/06/20 13:51:40 by cchameyr         ###   ########.fr       */
+/*   Updated: 2018/06/20 15:11:38 by cchameyr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -165,9 +165,12 @@ int main()
 	unitest_putnstr("t1", t1, 5);
 	unitest_putnstr("t2", t2, 1);
 	unitest_putnnbr("t3", t3, 4);
+	free(t3);
 
 	BACKLINE("ft_puts");
+	ft_puts(0);
 	ft_puts("tes");
+	ft_puts("jkladjgfksdjg;jsgsd");
 
 
 
