@@ -5,14 +5,14 @@ _ft_bzero:
 	push rbp
 	mov rbp, rsp
 	mov rcx, rsi
-	while
+	while:
 		cmp rcx, 0
 		jl exit
 		mov word[rdi+rcx], 0
 		dec rcx
 		jmp while
 
-	exit
+	exit:
 		leave
 		ret
 

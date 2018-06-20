@@ -6,7 +6,7 @@
 /*   By: cchameyr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/14 11:20:38 by cchameyr          #+#    #+#             */
-/*   Updated: 2018/06/19 11:15:13 by cchameyr         ###   ########.fr       */
+/*   Updated: 2018/06/20 11:53:47 by cchameyr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,5 +25,6 @@ int		ft_toupper(int c);
 int		ft_tolower(int c);
 
 void	ft_bzero(void *s, size_t n);
+int		ft_puts(const char *s);
 
 #endif
