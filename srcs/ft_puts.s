@@ -15,7 +15,7 @@ _ft_puts:
 	je null
 	while:
 		inc rbx
-		cmp word [r12+rbx], 0
+		cmp byte [r12+rbx], 0
 		je newline
 		mov rdi, 1
 		lea rsi, [r12+rbx]
