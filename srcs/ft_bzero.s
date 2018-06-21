@@ -4,12 +4,13 @@ global _ft_bzero
 _ft_bzero:
 	push rbp
 	mov rbp, rsp
-	mov rcx, rsi
+	mov rcx, -1
+
 	while:
-		cmp rcx, 0
-		jl exit
-		mov word[rdi+rcx], 0
-		dec rcx
+		inc rcx
+		cmp rcx, rsi
+		jae exit
+		mov byte[rdi+rcx], 0
 		jmp while
 
 	exit:
