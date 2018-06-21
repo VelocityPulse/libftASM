@@ -6,7 +6,7 @@
 /*   By: cchameyr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/14 11:09:51 by cchameyr          #+#    #+#             */
-/*   Updated: 2018/06/21 14:14:32 by cchameyr         ###   ########.fr       */
+/*   Updated: 2018/06/21 15:44:50 by cchameyr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -120,7 +120,6 @@ int main()
 	printf("param: 128 |\tret: %d\n", ft_isascii(128));
 
 	BACKLINE("ft_isalnum");
-
 	printf("param: 7 |\tret: %d\n", ft_isalnum(7));
 	printf("param: '[' |\tret: %d\n", ft_isalnum('['));
 	printf("param: 4242 |\tret: %d\n", ft_isalnum(4242));
@@ -188,7 +187,6 @@ int main()
 	printf("param: \"A\" |\t ret: '%zd'\n", ft_strlen("A"));
 
 	BACKLINE("ft_strcat");
-
 	char *s1 = strdup("aaaaaaaaaa");
 	char *s2 = strdup("test");
 	s1[4] = 0;

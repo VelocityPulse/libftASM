@@ -4,14 +4,13 @@ global _ft_strlen
 _ft_strlen:
 	push rbp
 	mov rbp, rsp
-	mov rcx, -1
-	while:
-		inc rcx
-		cmp byte [rdi+rcx], 0
-		je exit
-		jmp while
+	mov ecx, -1
+	mov al, 0
+	cld
+	repne scasb
+	not ecx
 
 	exit:
-		mov rax, rcx
+		lea rax, [ecx - 1]
 		leave
 		ret
