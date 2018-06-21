@@ -6,7 +6,7 @@
 /*   By: cchameyr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/14 11:09:51 by cchameyr          #+#    #+#             */
-/*   Updated: 2018/06/21 11:49:23 by cchameyr         ###   ########.fr       */
+/*   Updated: 2018/06/21 12:06:35 by cchameyr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -185,7 +185,7 @@ int main()
 	char *s2 = strdup("test");
 	
 
-	printf("test : %d\n", (int)ft_strcat(s1, s2));
+	printf("test : %s\n", ft_strcat(s1, s2));
 
 	return 0;
 }

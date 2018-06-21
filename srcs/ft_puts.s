@@ -11,7 +11,7 @@ _ft_puts:
 	mov rbp, rsp
 	mov rbx, -1
 	mov r12, rdi
-	cmp word r12, 0
+	cmp r12, 0
 	je null
 	while:
 		inc rbx
