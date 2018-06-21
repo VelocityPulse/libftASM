@@ -7,7 +7,7 @@ _ft_strlen:
 	mov rcx, -1
 	while:
 		inc rcx
-		cmp word [rdi+rcx], 0
+		cmp byte [rdi+rcx], 0
 		je exit
 		jmp while
 
