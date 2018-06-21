@@ -6,7 +6,7 @@
 /*   By: cchameyr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/14 11:09:51 by cchameyr          #+#    #+#             */
-/*   Updated: 2018/06/20 15:11:38 by cchameyr         ###   ########.fr       */
+/*   Updated: 2018/06/21 10:33:24 by cchameyr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 #include <string.h>
 
 #define BACKLINE(s) printf("\n------------------------------- %s\n", s);
+#define BACKLINE_B(s) printf("\033[32m\n--------------------------BONUS %s\n\033[39m", s);
 
 static void		ft_putstr(char *s)
 {
@@ -172,8 +173,14 @@ int main()
 	ft_puts("tes");
 	ft_puts("jkladjgfksdjg;jsgsd");
 
+//	BACKLINE("ft_strcat");
+	
 
-
+	BACKLINE_B("ft_strlen");
+	printf("param: \"ABCDE\" |\t ret: '%zd'\n", ft_strlen("ABCDE"));
+	printf("param: \"&*(\" |\t ret: '%zd' | real ret : '%zd'\n", ft_strlen("&*("), strlen("&*("));
+	printf("param: \"\" |\t ret: '%zd'\n", ft_strlen(""));
+	printf("param: \"A\" |\t ret: '%zd'\n", ft_strlen("A"));
 
 
 	return 0;
