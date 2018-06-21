@@ -6,7 +6,7 @@
 /*   By: cchameyr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/14 11:09:51 by cchameyr          #+#    #+#             */
-/*   Updated: 2018/06/21 13:44:21 by cchameyr         ###   ########.fr       */
+/*   Updated: 2018/06/21 14:14:32 by cchameyr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,19 +87,9 @@ static int		unitest_putnnbr(char *prefix, int const *p, size_t len)
 int main()
 {
 
-	BACKLINE("ft_isdigit");
-	printf("param: 1 |\tret: %d\n", ft_isdigit(1));
-	printf("param: 7 |\tret: %d\n", ft_isdigit(7));
-	printf("param: 'd' |\tret: %d\n", ft_isdigit('d'));
-	printf("param: '$' |\tret: %d\n", ft_isdigit('$'));
-	printf("param: 4242 |\tret: %d\n", ft_isdigit(4242));
-	printf("param: '0' |\tret: %d\n", ft_isdigit('0'));
-	printf("param: '2' |\tret: %d\n", ft_isdigit('5'));
-	printf("param: '9' |\tret: %d\n", ft_isdigit('9'));
-	printf("param: -10 |\tret: %d\n", ft_isdigit(-10));
-
 	BACKLINE("ft_isalpha");
 	printf("param: 1 |\tret: %d\n", ft_isalpha(1));
+	printf("param: '0' |\tret: %d\n", ft_isalpha('0'));
 	printf("param: 7 |\tret: %d\n", ft_isalpha(7));
 	printf("param: '[' |\tret: %d\n", ft_isalpha('['));
 	printf("param: 4242 |\tret: %d\n", ft_isalpha(4242));
@@ -111,6 +101,11 @@ int main()
 	printf("param: 'Z' |\tret: %d\n", ft_isalpha('Z'));
 
 	BACKLINE("ft_isdigit");
+	printf("param: 1 |\tret: %d\n", ft_isdigit(1));
+	printf("param: '0' |\tret: %d\n", ft_isdigit('0'));
+	printf("param: 7 |\tret: %d\n", ft_isdigit(7));
+	printf("param: 'd' |\tret: %d\n", ft_isdigit('d'));
+	printf("param: '$' |\tret: %d\n", ft_isdigit('$'));
 	printf("param: 4242 |\tret: %d\n", ft_isdigit(4242));
 	printf("param: '0' |\tret: %d\n", ft_isdigit('0'));
 	printf("param: '2' |\tret: %d\n", ft_isdigit('5'));
@@ -123,6 +118,19 @@ int main()
 	printf("param: 64 |\tret: %d\n", ft_isascii(64));
 	printf("param: 127 |\tret: %d\n", ft_isascii(127));
 	printf("param: 128 |\tret: %d\n", ft_isascii(128));
+
+	BACKLINE("ft_isalnum");
+
+	printf("param: 7 |\tret: %d\n", ft_isalnum(7));
+	printf("param: '[' |\tret: %d\n", ft_isalnum('['));
+	printf("param: 4242 |\tret: %d\n", ft_isalnum(4242));
+	printf("param: 'd' |\tret: %d\n", ft_isalnum('d'));
+	printf("param: 'D' |\tret: %d\n", ft_isalnum('D'));
+	printf("param: 'a' |\tret: %d\n", ft_isalnum('a'));
+	printf("param: '0' |\tret: %d\n", ft_isalnum('0'));
+	printf("param: '2' |\tret: %d\n", ft_isalnum('5'));
+	printf("param: '9' |\tret: %d\n", ft_isalnum('9'));
+	printf("param: -10 |\tret: %d\n", ft_isalnum(-10));
 
 	// sp to ~
 	BACKLINE("ft_isprint");
