@@ -11,13 +11,14 @@ _ft_strcat:
 	while:
 		cmp byte [rsi+rcx], 0
 		je exit
-		mov r8,  [rsi+rcx]
-		mov  [rdi+rdx], r8
+		mov r8, [rsi+rcx]
+		mov [rdi+rdx], r8
 		inc rcx
 		inc rdx
 		jmp while
 
 	exit:
+		mov byte [rdi+rdx], 0
 		mov rax, rdi
 		leave
 		ret

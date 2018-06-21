@@ -6,7 +6,7 @@
 /*   By: cchameyr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/14 11:09:51 by cchameyr          #+#    #+#             */
-/*   Updated: 2018/06/21 12:06:35 by cchameyr         ###   ########.fr       */
+/*   Updated: 2018/06/21 13:44:21 by cchameyr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -181,9 +181,9 @@ int main()
 
 	BACKLINE("ft_strcat");
 
-	char *s1 = malloc(10);
+	char *s1 = strdup("aaaaaaaaaa");
 	char *s2 = strdup("test");
-	
+	s1[4] = 0;
 
 	printf("test : %s\n", ft_strcat(s1, s2));
 
