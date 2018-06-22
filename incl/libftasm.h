@@ -6,7 +6,7 @@
 /*   By: cchameyr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/14 11:20:38 by cchameyr          #+#    #+#             */
-/*   Updated: 2018/06/21 10:29:35 by cchameyr         ###   ########.fr       */
+/*   Updated: 2018/06/22 11:50:46 by cchameyr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,8 @@ void	ft_bzero(void *s, size_t n);
 int		ft_puts(const char *s);
 
 char	*ft_strcat(char *s1, const char *s2);
+
+void	*ft_memset(void *b, int c, size_t len);
 
 size_t	ft_strlen(const char *s);
 

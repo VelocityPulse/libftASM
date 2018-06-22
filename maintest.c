@@ -6,7 +6,7 @@
 /*   By: cchameyr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/14 11:09:51 by cchameyr          #+#    #+#             */
-/*   Updated: 2018/06/22 11:35:48 by cchameyr         ###   ########.fr       */
+/*   Updated: 2018/06/22 14:15:02 by cchameyr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,7 +75,6 @@ static int		unitest_putnnbr(char *prefix, int const *p, size_t len)
 	ft_putstr(prefix);
 	ft_putstr(" |\tret: ");
 	while (++i < len) {
-//		ft_putstr("\033[31m0\033[39m");
 		ft_putnbr(p[i]);
 		ft_putstr(" ");
 	}
@@ -83,6 +82,18 @@ static int		unitest_putnnbr(char *prefix, int const *p, size_t len)
 	return (i);
 }
 
+void			unitest_putmem(char *prefix, void const *p, int len) 
+{
+	int i = 0;
+	unsigned char *t;
+
+	t = (unsigned char *)p;
+	i = 0;
+	printf("%s ", prefix);
+	while (i++ < len)
+		printf(" %.2x", t[i]);
+	printf("\n");
+}
 
 int main()
 {
@@ -197,8 +208,29 @@ int main()
 	printf("param : s1:[%s] s2:[%s]\n", s1, s2);
 	printf("mine  : ret:[%s]\n", ft_strcat(s1, s2));
 	printf("real  : ret:[%s]\n", strcat(s1temp, s2temp));
+	free(s1);
+	free(s1temp);
+	free(s2);
+	free(s2temp);
+
+	BACKLINE("ft_memset");
+	char *b1 = strdup("xxxxxxxxxxxxx");
+	char *b1temp = strdup(b1);
+	void *b2 = malloc(20);
+	void *b2temp = malloc(20);
 
 
+	printf("param : b1 :[%s] | c:['G'] | len:[strlen(b1)]\n", b1);
+	printf("real  : ret:[%s]\n", (char *)memset(b1temp, 'G', strlen(b1temp)));
+	printf("mine  : ret:[%s]\n", (char *)memset(b1, 'G', strlen(b1)));
+
+	b2 = memset(b2, 43, 20);
+	b2temp = memset(b2temp, 43, 20);
+	unitest_putmem("param : (+2)\t", b2temp, 19);
+	memset(b2temp + 4, 0, 13);
+	unitest_putmem("real  :\t\t", b2temp, 19);
+	ft_memset(b2 + 4, 0, 13);
+//	unitest_putmem("mine  :\t\t", b2, 19);
 
 
 	return 0;
