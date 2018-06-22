@@ -5,9 +5,9 @@ _ft_memset:
 	push rbp
 	mov rbp, rsp
 	mov r8, rdi ; save rdi
-	mov ecx, [rsi] ; mov len
-	mov ds, rdx ; mov char to set
-	std
+	mov rax, rsi ; mov len
+	mov rcx, rdx ; mov char to set
+	cld
 	rep stosb
 	mov rax, r8
 	leave

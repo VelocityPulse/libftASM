@@ -6,7 +6,7 @@
 /*   By: cchameyr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/14 11:09:51 by cchameyr          #+#    #+#             */
-/*   Updated: 2018/06/22 14:15:02 by cchameyr         ###   ########.fr       */
+/*   Updated: 2018/06/22 14:55:27 by cchameyr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -230,7 +230,7 @@ int main()
 	memset(b2temp + 4, 0, 13);
 	unitest_putmem("real  :\t\t", b2temp, 19);
 	ft_memset(b2 + 4, 0, 13);
-//	unitest_putmem("mine  :\t\t", b2, 19);
+	unitest_putmem("mine  :\t\t", b2, 19);
 
 
 	return 0;
