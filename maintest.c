@@ -6,7 +6,7 @@
 /*   By: cchameyr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/14 11:09:51 by cchameyr          #+#    #+#             */
-/*   Updated: 2018/06/22 14:55:27 by cchameyr         ###   ########.fr       */
+/*   Updated: 2018/06/22 16:50:00 by cchameyr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -231,6 +231,26 @@ int main()
 	unitest_putmem("real  :\t\t", b2temp, 19);
 	ft_memset(b2 + 4, 0, 13);
 	unitest_putmem("mine  :\t\t", b2, 19);
+	free(b1);
+	free(b1temp);
+	free(b2);
+	free(b2temp);
+
+	BACKLINE("ft_memcpy");
+	
+	char *e1 = strdup("this function        string");
+	char *e1bis = strdup("copy a");
+	char *e2 = strdup(e1);
+	char *e2bis = strdup(e1bis);
+
+	printf("param\t\t: e1 + 14 | e1bis | strlen(e1bis))\n");
+	printf("e1\t\t: %s\ne1bis\t\t: %s\n", e1, e1bis);
+	ft_memcpy(e1 + 14, e1bis, strlen(e1bis));
+	printf("mine ret\t: %s\n", e1);
+
+	memcpy(e2 + 14, e2bis, strlen(e2bis));
+	printf("real ret\t: %s\n", e2);
+
 
 
 	return 0;
