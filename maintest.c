@@ -6,7 +6,7 @@
 /*   By: cchameyr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/14 11:09:51 by cchameyr          #+#    #+#             */
-/*   Updated: 2018/06/21 15:56:55 by cchameyr         ###   ########.fr       */
+/*   Updated: 2018/06/22 11:35:48 by cchameyr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -180,7 +180,7 @@ int main()
 	ft_puts("tes");
 	ft_puts("jkladjgfksdjg;jsgsd");
 
-	BACKLINE_B("ft_strlen");
+	BACKLINE("ft_strlen");
 	printf("param: \"ABCDE\" |\t ret: '%zd'\n", ft_strlen("ABCDE"));
 	printf("param: \"&*(\" |\t ret: '%zd' | real ret : '%zd'\n", ft_strlen("&*("), strlen("&*("));
 	printf("param: \"\" |\t ret: '%zd'\n", ft_strlen(""));
@@ -188,10 +188,18 @@ int main()
 
 	BACKLINE("ft_strcat");
 	char *s1 = strdup("aaaaaaaaaa");
+	char *s1temp = strdup(s1);
 	char *s2 = strdup("test");
+	char *s2temp = strdup(s2);
 	s1[4] = 0;
+	s1temp[4] = 0;
 
-	printf("test : %s\n", ft_strcat(s1, s2));
+	printf("param : s1:[%s] s2:[%s]\n", s1, s2);
+	printf("mine  : ret:[%s]\n", ft_strcat(s1, s2));
+	printf("real  : ret:[%s]\n", strcat(s1temp, s2temp));
+
+
+
 
 	return 0;
 }
