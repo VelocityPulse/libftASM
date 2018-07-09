@@ -6,7 +6,7 @@
 /*   By: cchameyr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/14 11:09:51 by cchameyr          #+#    #+#             */
-/*   Updated: 2018/07/09 11:21:30 by cchameyr         ###   ########.fr       */
+/*   Updated: 2018/07/09 15:51:40 by cchameyr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -252,8 +252,20 @@ int main()
 	printf("real ret\t: %s\n", e2);
 
 	BACKLINE("ft_strdup");
+	char *v1 = ft_strdup("");
+	char *v1b = strdup("");
 
-	ft_strdup("test");
+	char *sample_string = "xxxxxxxxxxxxX";
+	char *v2 = ft_strdup(sample_string);
+	char *v2b = strdup(sample_string);
+
+	printf("%d\n", ft_strdup(""));
+	printf("param: '%s' |\tmine: '%s' | real: '%s'\n", "", v1, v1b);
+	printf("param: '%s' |\tmine: '%s' | real: '%s'\n", sample_string, v2, v2b);
+	unitest_putmem("mine: \t\t", v2, strlen(sample_string));
+	unitest_putmem("real: \t\t", v2b, strlen(sample_string));
+
+
 
 
 	return 0;
