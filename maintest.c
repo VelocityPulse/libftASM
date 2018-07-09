@@ -6,7 +6,7 @@
 /*   By: cchameyr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/14 11:09:51 by cchameyr          #+#    #+#             */
-/*   Updated: 2018/06/22 16:50:00 by cchameyr         ###   ########.fr       */
+/*   Updated: 2018/07/09 11:21:30 by cchameyr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -251,6 +251,9 @@ int main()
 	memcpy(e2 + 14, e2bis, strlen(e2bis));
 	printf("real ret\t: %s\n", e2);
 
+	BACKLINE("ft_strdup");
+
+	ft_strdup("test");
 
 
 	return 0;
