@@ -1,8 +1,11 @@
 section .data
 buff_size equ 32
-error:
+error_unknown:
 	.prefix db "cat: ", 0
-	.sufix db ": No such file or directory", 10, 0
+	.suffix db ": No such file or directory", 10, 0
+error_directory:
+	.prefix db "cat: ", 0
+	.suffix db ": Is a directory", 10, 0
 
 section .bss
 buffer resb buff_size
@@ -23,15 +26,11 @@ _ft_cat:
 	mov rsi, 0 ;O_RDONLY
 	mov rdx, 0 ;no mode
 	syscall
-
-	;if open fail, error_open
-	cmp rax, 2
-	je error_open
-	cmp rax, 0
-	je error_open
 	mov r15, rax ;save fd
 
-	pop rdi;clear rdi in stack
+	;if open fail, error_open
+	jc print_error_unknown
+
 
 	until_finish_file:
 		;read file
@@ -56,14 +55,25 @@ _ft_cat:
 	syscall
 
 	return:
+		pop rdi ;clear rdi in stack
 		leave
 		ret
 
-	error_open:
-		lea rdi, [rel error.prefix]
+	print_error_unknown:
+		lea rdi, [rel error_unknown.prefix]
 		call _ft_putstr
 		pop rdi
 		call _ft_putstr
-		lea rdi, [rel error.sufix]
+		lea rdi, [rel error_unknown.suffix]
 		call _ft_putstr
 		jmp return
+
+	print_error_directory:
+		lea rdi, [rel error_directory.prefix]
+		call _ft_putstr
+		pop rdi
+		call _ft_putstr
+		lea rdi, [rel error_directory.suffix]
+		call _ft_putstr
+		jmp return
+
