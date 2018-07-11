@@ -6,7 +6,7 @@
 #    By: cchameyr <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/06/11 12:08:35 by cchameyr          #+#    #+#              #
-#    Updated: 2018/07/11 14:04:44 by cchameyr         ###   ########.fr        #
+#    Updated: 2018/07/11 14:26:51 by cchameyr         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -72,10 +72,13 @@ clean: objs_rm
 fclean: clean
 	$(RM) $(NAME)
 	$(RM) $(addprefix srcs/, $(FILES:.s=.o))
-	$(RM) a.out
+	$(RM) a.out maintest ft_cat
 
 re: fclean all
 
 r: re
-	gcc $(DEBUG) maintest.c $(NAME)
-	./a.out
+	gcc $(DEBUG) maintest.c $(NAME) -o maintest
+	./maintest
+
+cat: re
+	gcc $(DEBUG) test_cat.c $(NAME) -o ft_cat 

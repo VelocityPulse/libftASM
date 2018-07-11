@@ -1,5 +1,8 @@
 section .data
 buff_size equ 32
+error:
+	.prefix db "cat: ", 0
+	.sufix db ": No such file or directory", 10, 0
 
 section .bss
 buffer resb buff_size
@@ -12,6 +15,9 @@ _ft_cat:
 	push rbp
 	mov rbp, rsp
 
+	;save parameter
+	push rdi
+
 	;try open the file
 	mov rax, 0x2000005 ;open
 	mov rsi, 0 ;O_RDONLY
@@ -20,10 +26,12 @@ _ft_cat:
 	
 	;if open fail, return
 	cmp rax, 2
-	je return
+	je error_open
 	cmp rax, 0
-	je return
+	je error_open
 	mov r15, rax ;save fd
+
+	pop rdi;clear rdi in stack
 
 	until_finish_file:
 		;read file
@@ -44,11 +52,18 @@ _ft_cat:
 
 		jmp until_finish_file
 
-
 	return:
-	leave
-	ret
+		leave
+		ret
 
+	error_open:
+		lea rdi, [rel error.prefix]
+		call _ft_putstr
+		pop rdi
+		call _ft_putstr
+		lea rdi, [rel error.sufix]
+		call _ft_putstr
+		jmp return
 
 
 

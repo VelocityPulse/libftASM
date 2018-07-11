@@ -2,3 +2,5 @@
 *.a
 /objs
 a.out*
+*dSYM/
+
