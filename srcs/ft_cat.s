@@ -23,8 +23,8 @@ _ft_cat:
 	mov rsi, 0 ;O_RDONLY
 	mov rdx, 0 ;no mode
 	syscall
-	
-	;if open fail, return
+
+	;if open fail, error_open
 	cmp rax, 2
 	je error_open
 	cmp rax, 0
@@ -51,6 +51,9 @@ _ft_cat:
 		call _ft_putstr
 
 		jmp until_finish_file
+	mov rax, 0x2000006
+	mov rdi, r15
+	syscall
 
 	return:
 		leave
@@ -64,41 +67,3 @@ _ft_cat:
 		lea rdi, [rel error.sufix]
 		call _ft_putstr
 		jmp return
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-; todo think to close file

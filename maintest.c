@@ -6,7 +6,7 @@
 /*   By: cchameyr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/14 11:09:51 by cchameyr          #+#    #+#             */
-/*   Updated: 2018/07/11 14:03:12 by cchameyr         ###   ########.fr       */
+/*   Updated: 2018/07/11 14:30:35 by cchameyr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -271,7 +271,8 @@ int main()
 
 	BACKLINE("ft_cat");
 
-	ft_cat("maintest.c");
+	ft_cat("incl/");
+	ft_cat("auteur");
 
 
 	return 0;
