@@ -6,7 +6,7 @@
 /*   By: cchameyr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/14 11:09:51 by cchameyr          #+#    #+#             */
-/*   Updated: 2018/07/11 11:47:59 by cchameyr         ###   ########.fr       */
+/*   Updated: 2018/07/11 12:37:11 by cchameyr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 #define BACKLINE(s) printf("\n------------------------------- %s\n", s);
 #define BACKLINE_B(s) printf("\033[32m\n--------------------------BONUS %s\n\033[39m", s);
 
-static void		ft_putstr(char *s)
+static void		unitest_putstr(char *s)
 {
 	write(1, s, strlen(s));
 }
@@ -52,12 +52,12 @@ static int		unitest_putnstr(char *prefix, void const *p, size_t len)
 
 	i = -1;
 	s = (char *)p;
-	ft_putstr("param: ");
-	ft_putstr(prefix);
-	ft_putstr(" |\tret: ");
+	unitest_putstr("param: ");
+	unitest_putstr(prefix);
+	unitest_putstr(" |\tret: ");
 	while (++i < len) {
 		if (s[i] == 0) {
-			ft_putstr("\033[31m0\033[39m");
+			unitest_putstr("\033[31m0\033[39m");
 		} else {
 			write(1, &s[i], 1);
 		}
@@ -71,12 +71,12 @@ static int		unitest_putnnbr(char *prefix, int const *p, size_t len)
 	size_t		i;
 
 	i = -1;
-	ft_putstr("param: ");
-	ft_putstr(prefix);
-	ft_putstr(" |\tret: ");
+	unitest_putstr("param: ");
+	unitest_putstr(prefix);
+	unitest_putstr(" |\tret: ");
 	while (++i < len) {
 		ft_putnbr(p[i]);
-		ft_putstr(" ");
+		unitest_putstr(" ");
 	}
 	printf("\n");
 	return (i);
@@ -264,11 +264,15 @@ int main()
 	unitest_putmem("mine: \t\t", v2, strlen(sample_string));
 	unitest_putmem("real: \t\t", v2b, strlen(sample_string));
 
+
+	BACKLINE_B("ft_putstr");
+
+	ft_putstr("test\n");
+
 	BACKLINE("ft_cat");
 
 	ft_cat("maintest.c");
 
-	BACKLINE_B("ft_putstr");
 
 	return 0;
 }

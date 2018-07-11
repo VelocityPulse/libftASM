@@ -23,26 +23,25 @@ _ft_cat:
 	je return
 	cmp rax, 0
 	je return
-	mov r8, rax ;save fd
-	;push r8
+	mov r15, rax ;save fd
 
 	until_finish_file:
 		;read file
 		mov rax, 0x2000003 ;read
-		mov rdi, r8
-		mov rsi, buffer
-		mov rdx, buff_size
+		mov rdi, r15
+		lea rsi, [rel buffer]
+		mov rdx, [rel buff_size]
 		syscall
-		mov byte [rsi+rax], 0 ;put 0 on end of buffer
+;		mov byte [rsi+rax], 0 ;put 0 on end of buffer
 
-		;write buffer
-		mov rdi, rsi
-		call _ft_putstr
-		
 		;if end of file
 		cmp rax, 0
 		jle return
-		;else
+
+		;write buffer
+;		mov rdi, rsi
+		call _ft_putstr
+
 		jmp until_finish_file
 
 
