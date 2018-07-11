@@ -6,7 +6,7 @@
 #    By: cchameyr <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/06/11 12:08:35 by cchameyr          #+#    #+#              #
-#    Updated: 2018/07/11 13:50:39 by cchameyr         ###   ########.fr        #
+#    Updated: 2018/07/11 14:04:44 by cchameyr         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -72,6 +72,7 @@ clean: objs_rm
 fclean: clean
 	$(RM) $(NAME)
 	$(RM) $(addprefix srcs/, $(FILES:.s=.o))
+	$(RM) a.out
 
 re: fclean all
 

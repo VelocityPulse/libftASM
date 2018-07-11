@@ -1,8 +1,8 @@
 section .data
-buff_size dq 32
+buff_size equ 32
 
 section .bss
-buffer resb 32
+buffer resb buff_size
 
 section .text
 global _ft_cat
@@ -28,18 +28,18 @@ _ft_cat:
 	until_finish_file:
 		;read file
 		mov rax, 0x2000003 ;read
-		mov rdi, r15
+		mov rdi, r15 ;mov fd
 		lea rsi, [rel buffer]
-		mov rdx, [rel buff_size]
+		mov rdx, buff_size
 		syscall
-;		mov byte [rsi+rax], 0 ;put 0 on end of buffer
+		mov byte [rsi+rax], 0 ;put 0 on end of buffer
 
 		;if end of file
 		cmp rax, 0
 		jle return
 
 		;write buffer
-;		mov rdi, rsi
+		mov rdi, rsi
 		call _ft_putstr
 
 		jmp until_finish_file

@@ -6,7 +6,7 @@
 /*   By: cchameyr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/14 11:09:51 by cchameyr          #+#    #+#             */
-/*   Updated: 2018/07/11 12:37:11 by cchameyr         ###   ########.fr       */
+/*   Updated: 2018/07/11 14:03:12 by cchameyr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -237,7 +237,7 @@ int main()
 	free(b2temp);
 
 	BACKLINE("ft_memcpy");
-	
+
 	char *e1 = strdup("this function        string");
 	char *e1bis = strdup("copy a");
 	char *e2 = strdup(e1);
