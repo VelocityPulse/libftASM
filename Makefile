@@ -6,7 +6,7 @@
 #    By: cchameyr <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/06/11 12:08:35 by cchameyr          #+#    #+#              #
-#    Updated: 2018/07/11 11:47:41 by cchameyr         ###   ########.fr        #
+#    Updated: 2018/07/11 13:50:39 by cchameyr         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -65,12 +65,13 @@ objs_mv:
 
 objs_rm:
 	$(RM) $(OPATH)
+	$(RM) $(SRCS:.s=.o)
 
 clean: objs_rm
 
 fclean: clean
 	$(RM) $(NAME)
-	$(RM) a.out
+	$(RM) $(addprefix srcs/, $(FILES:.s=.o))
 
 re: fclean all
 
