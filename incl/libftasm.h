@@ -6,7 +6,7 @@
 /*   By: cchameyr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/14 11:20:38 by cchameyr          #+#    #+#             */
-/*   Updated: 2018/06/22 17:26:53 by cchameyr         ###   ########.fr       */
+/*   Updated: 2018/07/11 11:48:24 by cchameyr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,5 +38,9 @@ void	*ft_memcpy(void *dst, const void *src, size_t n);
 
 size_t	ft_strlen(const char *s);
 char	*ft_strdup(const char *s1);
+
+void	ft_cat(const char *s);
+
+void	ft_putstr(const char *s);
 
 #endif

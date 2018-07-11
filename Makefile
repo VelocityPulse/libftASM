@@ -6,7 +6,7 @@
 #    By: cchameyr <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/06/11 12:08:35 by cchameyr          #+#    #+#              #
-#    Updated: 2018/06/22 17:25:47 by cchameyr         ###   ########.fr        #
+#    Updated: 2018/07/11 11:47:41 by cchameyr         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,7 +25,9 @@ FILES = ft_isdigit.s \
 		ft_strlen.s \
 		ft_memset.s \
 		ft_memcpy.s \
-		ft_strdup.s
+		ft_strdup.s \
+		ft_cat.s \
+		ft_putstr.s
 
 SRCS = $(addprefix srcs/, $(FILES))
 vpath %.s srcs
