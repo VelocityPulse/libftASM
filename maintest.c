@@ -6,7 +6,7 @@
 /*   By: cchameyr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/14 11:09:51 by cchameyr          #+#    #+#             */
-/*   Updated: 2018/07/11 14:30:35 by cchameyr         ###   ########.fr       */
+/*   Updated: 2018/07/11 15:30:50 by cchameyr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 #include <unistd.h>
 #include <stdio.h>
 #include <string.h>
+#include <fcntl.h>
 
 #define BACKLINE(s) printf("\n------------------------------- %s\n", s);
 #define BACKLINE_B(s) printf("\033[32m\n--------------------------BONUS %s\n\033[39m", s);
@@ -271,8 +272,11 @@ int main()
 
 	BACKLINE("ft_cat");
 
-	ft_cat("incl/");
-	ft_cat("auteur");
+	int fd1 = open("incl", O_RDONLY, 0);
+	ft_cat(fd1);
+	close(fd1);
+	fd1 = open("auteur", O_RDONLY, 0);
+	ft_cat(fd1);
 
 
 	return 0;
